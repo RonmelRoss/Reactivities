@@ -14,6 +14,7 @@ interface IProps {
   setSelectedActivity: (activity: IActivity | null) => void;
   createActivity: (activity: IActivity) => void;
   editActivity: (activity: IActivity) => void;
+  deleteActivity: (id: string) => void;
 }
 
 const ActivityDashboard: React.FC<IProps> = ({
@@ -24,7 +25,8 @@ const ActivityDashboard: React.FC<IProps> = ({
     setEditMode,
     setSelectedActivity,
     createActivity,
-    editActivity
+    editActivity,
+    deleteActivity
   }) => {
     return (
       <Grid>
@@ -34,7 +36,11 @@ const ActivityDashboard: React.FC<IProps> = ({
               <List.Item key={activity.id}>{activity.title}</List.Item>
             ))}
           </List> */}
-          <ActivityList activities={activities} selectActivity={selectActivity} />
+          <ActivityList
+            activities={activities}
+            selectActivity={selectActivity}
+            deleteActivity={deleteActivity}
+          />
         </Grid.Column>
         <Grid.Column width={6}>
         {/* && indicates that activity={selectedActivity} is only executed if selectedActivity is not equal to null
