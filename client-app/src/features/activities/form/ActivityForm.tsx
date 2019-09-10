@@ -36,9 +36,7 @@ const ActivityForm: React.FC<IProps> = ({
     const [activity, setActivity] = useState<IActivity>(initializeForm);
 
     const handleInputChange = (event: FormEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        // console.log(event.target.value);
         const {name, value} = event.currentTarget;
-        // setActivity({...activity, title: event.target.value});
         setActivity({...activity, [name]: value});
     }
 

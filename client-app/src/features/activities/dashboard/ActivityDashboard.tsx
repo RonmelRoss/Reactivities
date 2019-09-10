@@ -8,7 +8,7 @@ import ActivityForm from '../form/ActivityForm';
 interface IProps {
   activities: IActivity[];
   selectActivity: (id: string) => void;
-  selectedActivity: IActivity | null; // Indicates whether selectActivity is of type IActivity of null
+  selectedActivity: IActivity | null;
   editMode: boolean;
   setEditMode: (editMode: boolean) => void;
   setSelectedActivity: (activity: IActivity | null) => void;
@@ -31,11 +31,6 @@ const ActivityDashboard: React.FC<IProps> = ({
     return (
       <Grid>
         <Grid.Column width={10}>
-          {/* <List>
-            {activities.map((activity) => (
-              <List.Item key={activity.id}>{activity.title}</List.Item>
-            ))}
-          </List> */}
           <ActivityList
             activities={activities}
             selectActivity={selectActivity}
@@ -43,8 +38,6 @@ const ActivityDashboard: React.FC<IProps> = ({
           />
         </Grid.Column>
         <Grid.Column width={6}>
-        {/* && indicates that activity={selectedActivity} is only executed if selectedActivity is not equal to null
-        or !editMode is true */}
         {selectedActivity && !editMode && (
           <ActivityDetails
             activity={selectedActivity}
@@ -54,7 +47,7 @@ const ActivityDashboard: React.FC<IProps> = ({
         )}
         {editMode &&
           <ActivityForm
-            key={selectedActivity && selectedActivity.id || 0}
+            key={(selectedActivity && selectedActivity.id) || 0}
             setEditMode={setEditMode}
             activity={selectedActivity!}
             createActivity={createActivity}

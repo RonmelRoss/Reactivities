@@ -13,8 +13,6 @@ const ActivityList: React.FC<IProps> = ({activities, selectActivity, deleteActiv
         <Segment clearing>
             <Item.Group divided>
             {activities.map((activity) => (
-              //<List.Item key={activity.id}>{activity.title}</List.Item>
-
                 <Item key={activity.id}>
                     <Item.Content>
                         <Item.Header as='a'>{activity.title}</Item.Header>
@@ -41,7 +39,6 @@ const ActivityList: React.FC<IProps> = ({activities, selectActivity, deleteActiv
             ))}
             </Item.Group>
         </Segment>
-
     )
 }
 

@@ -53,11 +53,6 @@ const App = () => {
     <Fragment>
       <NavBar openCreateForm={handleOpenCreateForm} />
       <Container style={{marginTop:'7em'}}>
-        {/* <List>
-          {activities.map((activity)=>(
-            <List.Item key={activity.id}>{activity.title}</List.Item>
-          ))}
-        </List> */}
         <ActivityDashboard
           activities={activities}
           selectActivity={handleSelectedActivity}
