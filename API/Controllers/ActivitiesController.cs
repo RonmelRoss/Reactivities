@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using MediatR;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace API.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<ActionResult<Activity>> Details(Guid id)
         {
             return await Mediator.Send(new Details.Query{Id = id});

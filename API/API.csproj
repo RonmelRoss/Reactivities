@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <!-- TO USE USER-SECRETS, ADD <UserSecretsId>GUID</UserSecretsId> TAG BELOW-->
+    <UserSecretsId>2e754380-caab-42ff-8362-3a8ccd47d80e</UserSecretsId>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
