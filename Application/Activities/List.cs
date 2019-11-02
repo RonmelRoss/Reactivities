@@ -27,8 +27,6 @@ namespace Application.Activities
             {
                 // throw new System.NotImplementedException();
                 var activities = await _context.Activities
-                    .Include(x => x.UserActivities)
-                    .ThenInclude(x => x.AppUser)
                     .ToListAsync();
 
                 // return activities;
